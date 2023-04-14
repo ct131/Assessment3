@@ -13,6 +13,8 @@ public class controller : MonoBehaviour
     public int speed = 2;
     // 已经吃到的金币数量
     public int count = 0;
+    public string clock;
+    
 
     // 游戏胜利的UI界面
     public GameObject winUI;
@@ -57,7 +59,8 @@ public class controller : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+
+        if (other.gameObject.CompareTag(clock))
         {
             // 吃到一个金币，更新计数器并隐藏金币
             other.gameObject.SetActive(false);
@@ -74,6 +77,7 @@ public class controller : MonoBehaviour
     void ShowWinUI()
     {
         // 激活游戏胜利的UI界面
+        Time.timeScale = 0;
         winUI.SetActive(true);
     }
 

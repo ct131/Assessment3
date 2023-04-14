@@ -27,7 +27,6 @@ public class zombie : MonoBehaviour
 
         if (direction.magnitude <= 1)
         {
-            // 设置人物的红色材质
            
             // 将人物标记为已经被捉住
             target.GetComponent<controller>().isCaught = true;
